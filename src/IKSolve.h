@@ -7,14 +7,15 @@
 #include "std_msgs/Joy.h"
 #include "std_msgs/JointState.h"
 
-using namespace std;
+#endif
 
+using namespace std;
 class IKSolve {
     public:
         void joyParse(const std_msgs::Joy::ConstPtr& msg);
         double * ikSolve(double coords[], double alpha);
     private:
-        constexpr double pi() { return std::atan(1)*4; }
+        const double pi = 3.1415926535897932384626433;
         const double SHOULDER_LEN = 10;
         const double ELBOW_LEN = 10;
         const double WRIST_LEN = 4;
@@ -25,4 +26,3 @@ class IKSolve {
 
 }
 
-#endif

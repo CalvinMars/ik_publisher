@@ -42,8 +42,8 @@ double *IKSolve::ikSolve(double coords[], double alpha)
     double theta13 = acos( ( pow(ELBOW_LEN,2) + pow(SHOULDER_LEN,2) + pow(l,2)) / ( -2 * l * SHOULDER_LEN ) );
     double phi1 = theta112 + theta13;
     double phi2 = acos( (pow(l,2) - pow(ELBOW_LEN,2) - pow(SHOULDER_LEN,2)) / (-2 * ELBOW_LEN * SHOULDER_LEN) );
-    double theta2 = phi1 + phi2 - pi();
-    double phi3 = (pi() - theta2) + alpha;
+    double theta2 = phi1 + phi2 - pi;
+    double phi3 = (pi - theta2) + alpha;
     double returnArray [3] = {phi1, phi2, phi3};
     return returnArray;
 }
