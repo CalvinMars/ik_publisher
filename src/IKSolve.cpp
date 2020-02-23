@@ -1,6 +1,6 @@
 #include "IKSolve.h"
 
-void IKSolve::joyParse(const std_msgs::Joy::ConstPtr &msg)
+void IKSolve::joyParse(const ConstPtr& msg);
 {
     double jointVals[6] = {};
     double *ikJoints = new double[]();
